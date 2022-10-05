@@ -1,13 +1,10 @@
 .grid-container {
-    width: 1280px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
+    text-align: center;
+    width: 100%;
 }
 
 .grid-item {
     width: 80px;
     height: 80px;
-    flex: auto;
+    display: inline-block;
 }
