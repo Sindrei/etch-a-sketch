@@ -1,0 +1,12 @@
+.grid-container {
+    width: 1280px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.grid-item {
+    min-width: 80px;
+    min-height: 80px;
+}
