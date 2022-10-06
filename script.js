@@ -6,12 +6,12 @@ function createGrid(size = 16) {
     gridRow.classList.toggle("grid-row");
     gridContainer.appendChild(gridRow);
     for (let y = 1; y <= size; y++) {
-      const gridSquare = document.createElement("div");
-      gridSquare.classList.toggle("grid-item");
-      gridSquare.addEventListener("mouseover", () => {
-        gridSquare.classList.add("grid-item-hover");
+      const gridItem = document.createElement("div");
+      gridItem.classList.toggle("grid-item");
+      gridItem.addEventListener("mouseover", () => {
+        gridItem.style.backgroundColor = randomColor();
       });
-      gridRow.appendChild(gridSquare);
+      gridRow.appendChild(gridItem);
     }
   }
 }
@@ -36,4 +36,14 @@ function removeGrid() {
   rows.forEach((row) => {
     gridContainer.removeChild(row);
   });
+}
+
+// Returns a random rgb color
+function randomColor() {
+  const red = Math.floor(Math.random() * 255 + 1);
+  const green = Math.floor(Math.random() * 255 + 1);
+  const blue = Math.floor(Math.random() * 255 + 1);
+
+  const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+  return rgbColor;
 }
