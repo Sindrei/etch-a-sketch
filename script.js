@@ -46,55 +46,19 @@ function removeGrid() {
   });
 }
 
-// Returns a random rgb color
+// Returns ten percent of black rgb color
 function randomColor() {
-  const red = Math.floor(Math.random() * 255 + 1);
-  const green = Math.floor(Math.random() * 255 + 1);
-  const blue = Math.floor(Math.random() * 255 + 1);
-  const rgbColor = `rgb(${red}, ${green}, ${blue})`;
-  return rgbColor;
+  const red = 255 - 25.5;
+  const green = 255 - 25.5;
+  const blue = 255 - 25.5;
+  return `rgb(${red}, ${green}, ${blue})`;
 }
 
 function darkerColor(rgbColor) {
   const rgbString = rgbColor.slice(4, rgbColor.length - 1).split(",");
 
-  const red = rgbString[0] / 255;
-  const green = rgbString[1] / 255;
-  const blue = rgbString[2] / 255;
-
-  const max = Math.max(red, green, blue);
-  const min = Math.min(red, green, blue);
-
-  let luminance = (max + min) / 2;
-  let hue;
-  let saturation;
-
-  if (min === max) {
-    saturation = 0;
-    hue = 0;
-  } else if (min != max) {
-    if (luminance <= 0.5) {
-      saturation = (max - min) / (max + min);
-    } else if (luminance > 0.5) {
-      saturation = (max - min) / (2.0 - max - min);
-    }
-    if (red === max) {
-      hue = (green - blue) / (max - min);
-    } else if (green === max) {
-      hue = 2 + (blue - red) / (max - min);
-    } else if (blue === max) {
-      hue = 4 + (red - green) / (max - min);
-    }
-  }
-  hue = hue *= 60;
-  if (hue < 0) {
-    hue += 360;
-  }
-  luminance *= 100;
-  saturation *= 100;
-
-  luminance = luminance - luminance * 0.1;
-  const hslColor = `hsl(${hue}, ${saturation}%, ${luminance}%)`;
-
-  return hslColor;
+  const red = rgbString[0] - 25.5;
+  const green = rgbString[1] - 25.5;
+  const blue = rgbString[2] - 25.5;
+  return `rgb(${red}, ${green}, ${blue})`;
 }
