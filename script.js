@@ -51,8 +51,7 @@ function randomColor() {
   const red = Math.floor(Math.random() * 255 + 1);
   const green = Math.floor(Math.random() * 255 + 1);
   const blue = Math.floor(Math.random() * 255 + 1);
-  const rgbColor = `rgb(${red}, ${green}, ${blue})`;
-  return rgbColor;
+  return `rgb(${red}, ${green}, ${blue})`;
 }
 
 function darkerColor(rgbColor) {
@@ -94,7 +93,5 @@ function darkerColor(rgbColor) {
   saturation *= 100;
 
   luminance = luminance - luminance * 0.1;
-  const hslColor = `hsl(${hue}, ${saturation}%, ${luminance}%)`;
-
-  return hslColor;
+  return `hsl(${hue}, ${saturation}%, ${luminance}%)`;
 }
