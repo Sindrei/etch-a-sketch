@@ -8,17 +8,11 @@ function createGrid(size = 16) {
     for (let y = 1; y <= size; y++) {
       const gridItem = document.createElement("div");
       gridItem.classList.toggle("grid-item");
-      gridItem.addEventListener(
-        "mouseover",
-        () => {
-          gridItem.style.backgroundColor = randomColor();
-          gridItem.addEventListener("mouseover", () => {
-            const newColor = gridItem.style.backgroundColor;
-            gridItem.style.backgroundColor = darkerColor(newColor);
-          });
-        },
-        { once: true }
-      );
+      gridItem.style.backgroundColor = "rgb(255, 255, 255)";
+      gridItem.addEventListener("mouseover", () => {
+        const newColor = gridItem.style.backgroundColor;
+        gridItem.style.backgroundColor = darkerColor(newColor);
+      });
       gridRow.appendChild(gridItem);
     }
   }
@@ -44,14 +38,6 @@ function removeGrid() {
   rows.forEach((row) => {
     gridContainer.removeChild(row);
   });
-}
-
-// Returns ten percent of black rgb color
-function randomColor() {
-  const red = 255 - 25.5;
-  const green = 255 - 25.5;
-  const blue = 255 - 25.5;
-  return `rgb(${red}, ${green}, ${blue})`;
 }
 
 function darkerColor(rgbColor) {
