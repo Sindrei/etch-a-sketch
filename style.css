@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100%;
+    justify-content: space-between;
 }
 
 .grid-container {
@@ -28,4 +30,18 @@ body {
 .button-new {
     margin: 10px 0;
     display: block;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    bottom: 0;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    font-size: 18px;
 }
